@@ -40,7 +40,6 @@ class Jogo {
             System.out.println("2 - Go with Ross and ask the guard to get inside.");
             System.out.println("3 - Take the risky approach and jump with Parker.");
             System.out.println();
-            System.out.println();
             int X = input.nextInt();
             System.out.println();
             int Y = 1;
@@ -139,6 +138,10 @@ class Jogo {
                     while (Y == 1){
                         if (X == 1){
                             Y -= 1;
+                            matt.fearFactor = 100;
+                            ross.fearFactor = 100;
+                            tina.fearFactor = 100;
+                            parker.fearFactor = 100;
                             System.out.println();
                             System.out.println("-----------------------------------------------------------------------------------------------------------------");
                             System.out.println();
@@ -164,12 +167,28 @@ class Jogo {
                         }
                         if (X == 2){
                             Y -= 1;
+                            matt.fearFactor = 85;
+                            ross.fearFactor = 85;
+                            tina.fearFactor = 90;
+                            parker.fearFactor = 85;
                             System.out.println();
                             System.out.println("-----------------------------------------------------------------------------------------------------------------");
                             System.out.println();
                             System.out.println("With the board on the table, you and your friends start calling for the name of the ghost, then, the name Chika is spelled on the");
                             System.out.println("board, and, as if that was not enough, a big blue spectral head starts coming out of the board. The scene is scary enough for you");
-                            System.out.println("and your friends to leave the area screaming in terror.");
+                            System.out.println("and your friends to leave the area screaming in terror. Evetyone gained 80 points of fear");
+                            System.out.println();
+                            System.out.println(matt.name);
+                            System.out.println(matt.fearFactor);
+                            System.out.println();
+                            System.out.println(ross.name);
+                            System.out.println(ross.fearFactor);
+                            System.out.println();
+                            System.out.println(tina.name);
+                            System.out.println(tina.fearFactor);
+                            System.out.println();
+                            System.out.println(parker.name);
+                            System.out.println(parker.fearFactor);
                             System.out.println();
                             System.out.println("End of Chapter 1");
                             System.out.println();

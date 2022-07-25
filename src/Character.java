@@ -3,7 +3,7 @@ public class Character {
     float fearFactor;
     
     public Character(String name,
-                     int fearFactor)
+                     float fearFactor)
     {
         this.name = name;
         this.fearFactor = fearFactor;
