@@ -13,7 +13,7 @@ class Jogo {
                 "Tina",
                 10);
             Character parker = new Character(
-                "Matt",
+                "Parker",
                 0);
 
             System.out.println("Chapter 1 ------- The ghost at school!");
