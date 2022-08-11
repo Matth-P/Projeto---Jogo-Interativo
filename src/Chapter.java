@@ -3,30 +3,28 @@ import java.util.Scanner;
 public class Chapter {
     String name;
     String text;
-    Character character;
+    Character[] characters;
     int newFear;
-    String choice1;
-    String choice2;
+    String[] choices;
     Scanner scan;
    
 
     Chapter(String name,
             String text,
-            Character character,
+            Character[] characters,
             int newFear,
-            String choice1,
-            String choice2,
+            String[] choices,
             Scanner scan)   
     {
         this.name = name;
         this.text = text;
-        this.character = character;
+        this.characters = characters;
         this.newFear = newFear;
-        this.choice1 = choice1;
-        this.choice2 = choice2;
+        this.choices = choices;
         this.scan = scan;       
     }
-
+    
+    // Chapter display method
     void display()
     {
         System.out.println();
@@ -34,42 +32,53 @@ public class Chapter {
         System.out.println();
         System.out.println(this.text);
         System.out.println();
-        this.character.Fear(this.newFear);
-        if (this.choice1 != null)
+        for (int F = 0; F < characters.length; F++) 
         {
-            System.out.println();
-            System.out.println("" + this.choice1);
+            this.characters[F].Fear(this.newFear);     
         }
-        if (this.choice2 != null)
+        if (this.choices != null)
         {
-            System.out.println();
-            System.out.println("" + this.choice2);
+            for (int C = 0; C < choices.length; C++) 
+            {
+                System.out.println();
+                System.out.println("" + choices[C]);
+            }
+        }
+        System.out.println();
+        for (int N = 0; N < characters.length; N++) 
+        {   
+            int fearFactor = characters[N].fearFactor;
+            if (fearFactor != 100)
+            {
+                System.out.println(characters[N].name);
+                System.out.println(characters[N].fearFactor);
+                System.out.println();     
+            }   
         }
     }
     
+    //Chpater choice method
     int Choose()
     {
-        int choice = -1;
+        int path = -1;
 
-        if (choice1 != null && choice2 != null)
+        if (choices != null)
         {    
-            while (choice == -1)
+            while (path == -1)
             {
                 System.out.println("Your choice: ");
-                int choose = scan.nextInt();
-
-                if (choose == 1)
-                {
-                choice = 1;
+                String pathWrite = scan.nextLine();
+                for (int P = 0; P < choices.length; P++) 
+                {   
+                    if (pathWrite.equals(choices[P]))
+                    {
+                    path = P;
+                    }
                 }
-                else if (choose == 2)
-                {
-                choice = 2;
-                }
-        
-            } 
+            }
+            System.out.println(); 
         }
 
-        return choice;
+        return path;
     }
 }
