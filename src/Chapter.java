@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Chapter {
@@ -5,7 +6,7 @@ public class Chapter {
     String text;
     Character[] characters;
     int newFear;
-    String[] choices;
+    ArrayList<Choice> choices;
     Scanner scan;
    
 
@@ -13,14 +14,13 @@ public class Chapter {
             String text,
             Character[] characters,
             int newFear,
-            String[] choices,
             Scanner scan)   
     {
         this.name = name;
         this.text = text;
         this.characters = characters;
         this.newFear = newFear;
-        this.choices = choices;
+        this.choices = new ArrayList<Choice>();
         this.scan = scan;       
     }
     
@@ -32,19 +32,13 @@ public class Chapter {
         System.out.println();
         System.out.println(this.text);
         System.out.println();
+
         for (int F = 0; F < characters.length; F++) 
         {
             this.characters[F].Fear(this.newFear);     
         }
-        if (this.choices != null)
-        {
-            for (int C = 0; C < choices.length; C++) 
-            {
-                System.out.println();
-                System.out.println("" + choices[C]);
-            }
-        }
         System.out.println();
+
         for (int N = 0; N < characters.length; N++) 
         {   
             int fearFactor = characters[N].fearFactor;
@@ -54,6 +48,18 @@ public class Chapter {
                 System.out.println(characters[N].fearFactor);
                 System.out.println();     
             }   
+        }
+
+        if (this.choices.size() > 0)
+        {
+            for (int C = 0; C < choices.size(); C++) 
+            {
+                System.out.println("" + choices.get(C).text);
+            }
+        System.out.println();
+
+        int path = Choose();
+        this.choices.get(path).nextChapter.display();
         }
     }
     
@@ -66,11 +72,11 @@ public class Chapter {
         {    
             while (path == -1)
             {
-                System.out.println("Your choice: ");
+                System.out.print("Your choice: ");
                 String pathWrite = scan.nextLine();
-                for (int P = 0; P < choices.length; P++) 
+                for (int P = 0; P < choices.size(); P++) 
                 {   
-                    if (pathWrite.equals(choices[P]))
+                    if (pathWrite.equals(choices.get(P).text))
                     {
                     path = P;
                     }

@@ -31,20 +31,17 @@ class Jogo {
                 "is too scared and wants to go home, Ross wants to talk with the guard and Parker wants to jump over the gate without him noticing it.",
                 new Character[] {matt, tina, ross, parker},
                 0,
-                new String[] {"Go to home", 
-                "Jump with Parker"},
                 scan);                     
                 
             // Choice 1    
             Chapter chapter2 = new Chapter(
                 "- The fear gets to you all -",                    
                 "You told your friends it's too dangerous and it's time to go home. " +
-                " Party's fear reached it's maximum. " +
+                "Party's fear reached it's maximum. " +
                 "" +
                 "End 1 - Try again",
                 new Character[] {matt, tina, ross, parker},
                 110,
-                null,
                 scan);               
             
             // Choice 2
@@ -56,8 +53,6 @@ class Jogo {
                 "on edge, everyone gained 20 fear points",
                 new Character[] {matt, tina, ross, parker},
                 20,
-                new String[] {"Go home since it's really late",
-                "Put the Ouija board on one of the chairs"},
                 scan);
             
             // Choice 3
@@ -69,7 +64,6 @@ class Jogo {
                 "End 2 - Try again",
                 new Character[] {matt, tina, ross, parker},
                 100,
-                null,
                 scan);
              
             // Choice 4
@@ -82,41 +76,23 @@ class Jogo {
                 "End of Chapter 1",
                 new Character[] {matt, tina, ross, parker},
                 40,
-                null,
                 scan);
             
+            //Choices
+            chapter1.choices.add(new Choice("Go to home", chapter2));
+            chapter1.choices.add(new Choice("Jump with Parker", chapter4));
+            chapter4.choices.add(new Choice("Go home since it's really late", chapter5));
+            chapter4.choices.add(new Choice("Put the Ouija board on one of the chairs", chapter6));
+
+
+            Chapter one = chapter1;
+
+
+            // Game Execution
             System.out.println();
             System.out.println("-- Ghost Party --");
-            chapter1.display();
-            int path = chapter1.Choose();
+            one.display();
             
-            if(path == 0)
-            {
-                chapter2.display();
-            }
-            
-            else if(path == 1)
-            {
-                chapter4.display();
-                path = chapter4.Choose();
-                    if(path == 0)
-                    {
-                        chapter5.display();
-                    }
-                    else if(path == 1)
-                    {
-                        chapter6.display();
-                    }
-            }
-        
         scan.close();       
     }    
 }
-
-
-
-
-        
- 
-
-    
