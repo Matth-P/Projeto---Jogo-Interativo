@@ -3,9 +3,8 @@ public class Choice {
     Chapter nextChapter;
 
     public Choice(String text,
-                  Chapter nextChapter)
-    {
+            Chapter nextChapter) {
         this.text = text;
         this.nextChapter = nextChapter;
-    }              
+    }
 }
