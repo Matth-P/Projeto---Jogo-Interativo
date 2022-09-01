@@ -1,22 +1,26 @@
 public class Character {
     String name;
-    int mC;
+    Boolean mC;
     int fearFactor;
 
     public Character(String name,
-            int mC,
+            Boolean mC,
             int fearFactor) {
         this.name = name;
         this.mC = mC;
         this.fearFactor = fearFactor;
     }
 
-    // Character fear change method
+    // Character fear change method, when the value is bellow 100, it will showthe
+    // normal character
+    // energy, but if it reaches 100, it will show that a either a character "went
+    // home" or a game
+    // over in case the main character reaches that amount
     void Fear(int newFear) {
         this.fearFactor = this.fearFactor + newFear;
 
-        if (this.fearFactor > 100) {
-            if (mC == 1) {
+        if (this.fearFactor >= 100) {
+            if (mC == true) {
                 this.fearFactor = 100;
                 System.out.println("Max Fear!!!");
                 System.out.println("Game Over");
@@ -32,5 +36,4 @@ public class Character {
             this.fearFactor = 0;
         }
     }
-
 }

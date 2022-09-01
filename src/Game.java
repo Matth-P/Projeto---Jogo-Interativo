@@ -1,13 +1,17 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
-class Jogo {
+public class Game {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        Character matt = new Character("Matt", 1, 5);
-        Character tina = new Character("Tina", 0, 10);
-        Character ross = new Character("Ross", 0, 5);
-        Character parker = new Character("Parker", 0, 0);
+        fileLoader reader = new fileLoader();
+        HashMap<String, Character> characters = reader.loadCharacters("rsc/Characters.txt");
+
+        Character matt   = characters.get("Matt");
+        Character tina   = characters.get("Tina");
+        Character ross   = characters.get("Ross");
+        Character parker = characters.get("Parker");
 
         // Chapter 1
         Chapter chapter1 = new Chapter(
@@ -21,7 +25,7 @@ class Jogo {
                 0,
                 scan);
 
-        // Choice 1
+        // Choice 1 - End
         Chapter chapter2 = new Chapter(
                 "- The fear gets to you all -",
                 "You told your friends it's too dangerous and it's time to go home. " +
@@ -32,7 +36,7 @@ class Jogo {
                 110,
                 scan);
 
-        // Choice 2
+        // Choice 2 
         Chapter chapter3 = new Chapter(
                 "- The guard -",
                 "You and Ross went to the guard and asked him if they could enter the school, but he denied and aked you to leave. "
@@ -56,7 +60,7 @@ class Jogo {
                 20,
                 scan);
 
-        // Choice 4
+        // Choice 4 - End
         Chapter chapter5 = new Chapter(
                 "- Probably for the best -",
                 "It's getting too late and you guys decidade that this is not worth the effort and leave the school, without talking with the ghost."
@@ -68,7 +72,7 @@ class Jogo {
                 100,
                 scan);
 
-        // Choice 5
+        // Choice 5 - End of Chpater 1 
         Chapter chapter6 = new Chapter(
                 "- La Chika -",
                 "With the board on the table, you and your friends start calling for the name of the ghost, then, the name Chika is spelled on the"

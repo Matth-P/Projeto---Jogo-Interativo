@@ -4,7 +4,13 @@
     // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "Launch Game",
+            "request": "launch",
+            "mainClass": "Game",
+            "projectName": "Projeto Java - Jogo interativo_bcc68e5a"
+        },
         {
             "type": "java",
             "name": "Launch Jogo",
