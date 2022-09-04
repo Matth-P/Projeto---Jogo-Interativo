@@ -2,6 +2,7 @@ public class Character {
     String name;
     Boolean mC;
     int fearFactor;
+    public Object characters;
 
     public Character(String name,
             Boolean mC,

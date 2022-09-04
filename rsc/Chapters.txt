@@ -1,0 +1,133 @@
+CHAPTER
+NAME:
+- Chapter 1 ------- The ghost at school! -
+TEXT:
+Matt, Ross, Tina and Parker heard rummors that a spirit, called ''La Chika'', roams an abandoned school at night and now are going to investigate it further. The four went to the school at night, and found a guard at the gate, tina is too scared and wants to go home, Ross wants to talk with the guard and Parker wants to jump over the gate without him noticing it.
+CHARACTERS:
+Matt
+Tina
+Ross
+Parker
+FEAR CHANGE:
+0
+
+CHAPTER
+NAME:
+-- The fear gets to you all --
+TEXT:
+You told your friends it's too dangerous and it's time to go home. Party's fear reached it's maximum. End 1 - Try again.
+CHARACTERS:
+Matt
+Tina
+Ross
+Parker
+FEAR CHANGE:
+110
+
+CHAPTER
+NAME:
+-- The guard --
+TEXT:
+You and Ross went to the guard and asked him if they could enter the school, but he denied and aked you to leave. What are you going to do now ?
+CHARACTERS:
+Matt
+Tina
+Ross
+Parker
+FEAR CHANGE:
+10
+
+CHAPTER
+NAME:
+- The daring move -
+TEXT:
+You followed Parker to the wall and find a safe spot to jump, you then proced to the interior of the school, it's too dark and only your flashligh's light brigthens the darkness a bit. Tina is afraid, Ross is apprehensive and Parker is excited. You then hear something comming from one of the classrooms, that might be the perfect spot for the Ouija bord you brought to investigate. The whole party is on edge, everyone gained 20 fear points.
+CHARACTERS:
+Matt
+Tina
+Ross
+Parker
+FEAR CHANGE:
+20
+
+CHAPTER
+NAME:
+-- Probably for the best --
+TEXT:
+It's getting too late and you guys decidade that this is not worth the effort and leave the school, without talking with the ghost. Party's fear reached it's maximum. End 2 - Try again.
+CHARACTERS:
+Matt
+Tina
+Ross
+Parker
+FEAR CHANGE:
+100
+
+CHAPTER
+NAME:
+- La Chika -
+TEXT:
+With the board on the table, you and your friends start calling for the name of the ghost, then, the name Chika is spelled on the board, and, as if that was not enough, a big blue spectral head starts coming out of the board. The scene is scary enough for you and your friends to leave the area screaming in terror. Everyone gained 40 points of fear. End of Chapter 1.
+CHARACTERS:
+Matt
+Tina
+Ross
+Parker
+FEAR CHANGE:
+40
+
+CHOICE
+CHAPTER A:
+- Chapter 1 ------- The ghost at school! -
+TEXT:
+Go home
+CHAPTER B:
+-- The fear gets to you all --
+
+CHOICE
+CHAPTER A:
+- Chapter 1 ------- The ghost at school! -
+TEXT:
+Talk with the guard
+CHAPTER B:
+-- The guard --
+
+CHOICE
+CHAPTER A:
+- Chapter 1 ------- The ghost at school! -
+TEXT:
+Jump with Parker
+CHAPTER B:
+- The daring move -
+
+CHOICE
+CHAPTER A:
+-- The guard --
+TEXT:
+Go home
+CHAPTER B:
+-- The fear gets to you all --
+
+CHOICE
+CHAPTER A:
+-- The guard --
+TEXT:
+Jump with Parker
+CHAPTER B:
+- The daring move -
+
+CHOICE
+CHAPTER A:
+- The daring move -
+TEXT:
+Go home since it's really late
+CHAPTER B:
+-- Probably for the best --
+
+CHOICE
+CHAPTER A:
+- The daring move -
+TEXT:
+Put the Ouija board on one of the chairs
+CHAPTER B:
+- La Chika -

@@ -18,7 +18,7 @@ public class Chapter {
             Scanner scan) {
         this.name = name;
         this.text = text;
-        this.characters = characters;;
+        this.characters = characters;
         this.newFear = newFear;
         this.choices = new ArrayList<Choice>();
         this.scan = scan;
