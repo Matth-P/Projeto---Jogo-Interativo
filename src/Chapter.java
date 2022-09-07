@@ -3,15 +3,15 @@ import java.util.Scanner;
 
 // Chapter Class constructor
 public class Chapter {
-    String name;
-    String text;
-    Character[] characters;
-    int newFear;
-    ArrayList<Choice> choices;
-    Scanner scan;
+    private String name;
+    private String text;
+    private Character[] characters;
+    private int newFear;
+    private ArrayList<Choice> choices;
+    private Scanner scan;
 
     // Chapter building method
-    Chapter(String name,
+    public Chapter(String name,
             String text,
             Character[] characters,
             int newFear,
@@ -26,7 +26,7 @@ public class Chapter {
 
     // Chapter display method, it will show the name and the fear value of a giving
     // character
-    void display() {
+    public void display() {
         System.out.println();
         System.out.println(this.name);
         System.out.println();
@@ -39,29 +39,29 @@ public class Chapter {
         System.out.println();
 
         for (int N = 0; N < characters.length; N++) {
-            int fearFactor = characters[N].fearFactor;
+            int fearFactor = characters[N].getFF();
             if (fearFactor != 100) {
-                System.out.println(characters[N].name);
-                System.out.println(characters[N].fearFactor);
+                System.out.println(characters[N].getName());
+                System.out.println(characters[N].getFF());
                 System.out.println();
             }
         }
 
         if (this.choices.size() > 0) {
             for (int C = 0; C < choices.size(); C++) {
-                System.out.println("" + choices.get(C).text);
+                System.out.println("" + choices.get(C).getT());
             }
             System.out.println();
 
             int path = Choose();
-            this.choices.get(path).nextChapter.display();
+            this.choices.get(path).getNext().display();
         }
     }
 
     // Chpater choice method, it will ask for a input, and if that input does not
     // equals
     // the actual choice, it will reapeat the question again
-    int Choose() {
+    private int Choose() {
         int path = -1;
 
         if (choices != null) {
@@ -69,7 +69,7 @@ public class Chapter {
                 System.out.print("Your choice: ");
                 String pathWrite = scan.nextLine();
                 for (int P = 0; P < choices.size(); P++) {
-                    if (pathWrite.equals(choices.get(P).text)) {
+                    if (pathWrite.equals(choices.get(P).getT())) {
                         path = P;
                     }
                 }
@@ -78,5 +78,10 @@ public class Chapter {
         }
 
         return path;
+    }
+
+    public void addChoice(Choice choice)
+    {
+       this.choices.add(choice);
     }
 }

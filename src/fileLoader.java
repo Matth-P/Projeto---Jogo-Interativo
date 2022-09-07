@@ -1,3 +1,4 @@
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -5,7 +6,7 @@ import java.util.Scanner;
 
 public class fileLoader {
 
-    HashMap<String, Character> loadCharacters(String pathFileCharacters) 
+    public HashMap<String, Character> loadCharacters(String pathFileCharacters) 
     {
         HashMap<String, Character> characters = new HashMap<String, Character>();
         File fileCharacters = new File(pathFileCharacters);
@@ -43,7 +44,7 @@ public class fileLoader {
         return characters;
     }
    
-    HashMap<String, Chapter> loadChapters(String pathFileChapters,
+    public HashMap<String, Chapter> loadChapters(String pathFileChapters,
                                           HashMap<String, Character> characters,
                                           Scanner scanConsole)
     {
@@ -87,7 +88,7 @@ public class fileLoader {
     }
 
     private void loadChapter(HashMap<String, Character> characters, 
-                            Scanner scanConsole,
+                             Scanner scanConsole,
                              HashMap<String, Chapter> chapters, 
                              Scanner scanFileChapters) 
     {
@@ -136,6 +137,6 @@ public class fileLoader {
         nameChapterDestination = scanFileChapters.nextLine();
         Chapter chapterOrigin = chapters.get(nameChapterOrigin);
         Chapter chapterDestination = chapters.get(nameChapterDestination);
-        chapterOrigin.choices.add(new Choice(textChoice, chapterDestination));
-    }    
+        chapterOrigin.addChoice(new Choice(textChoice, chapterDestination));
+    }
 }

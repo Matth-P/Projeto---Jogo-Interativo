@@ -1,8 +1,8 @@
 public class Character {
-    String name;
-    Boolean mC;
-    int fearFactor;
-    public Object characters;
+    
+    private String name;
+    private Boolean mC;
+    private int fearFactor;
 
     public Character(String name,
             Boolean mC,
@@ -17,7 +17,7 @@ public class Character {
     // energy, but if it reaches 100, it will show that a either a character "went
     // home" or a game
     // over in case the main character reaches that amount
-    void Fear(int newFear) {
+    public void Fear(int newFear) {
         this.fearFactor = this.fearFactor + newFear;
 
         if (this.fearFactor >= 100) {
@@ -36,5 +36,15 @@ public class Character {
         } else if (this.fearFactor < 0) {
             this.fearFactor = 0;
         }
+    }
+
+    public String getName()
+    {
+    return this.name;
+    }
+
+    public int getFF()
+    {
+    return this.fearFactor;
     }
 }
