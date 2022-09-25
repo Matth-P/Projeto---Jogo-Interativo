@@ -1,4 +1,12 @@
-CHAPTER
+CHAPTER_IMAGE
+IMAGE:
+          /_\
+          |Q|
+    .-----' '-----.                                  __
+   /____[SCHOOL]___\                                ()))
+    | [] .-.-. [] |                                (((())
+  ..|____|_|_|____|..................................)(...
+END
 NAME:
 - Chapter 1 ------- The ghost at school! -
 TEXT:
@@ -24,7 +32,18 @@ Parker
 FEAR CHANGE:
 110
 
-CHAPTER
+CHAPTER_IMAGE
+IMAGE:
+                ,
+       __  _.-"` `'-.
+      /||\'._ __{}_(
+      ||||  |'--.__\
+      |  L.(   ^_\^
+      \ .-' |   _ |
+      | |   )\___/
+      |  \-'`:._]
+      \__/;      '-.
+END
 NAME:
 -- The guard --
 TEXT:
@@ -63,7 +82,22 @@ Parker
 FEAR CHANGE:
 100
 
-CHAPTER
+CHAPTER_IMAGE
+IMAGE:
+      ___
+     /   \
+    / O O \
+   |   O   |
+ , |       | ,
+  \/(     )\/
+   | )   ( |
+   |(     )|
+   ||   | |'
+   `|   | |
+    |   | |
+    |   /-'
+    |_.'         
+END
 NAME:
 - La Chika -
 TEXT:

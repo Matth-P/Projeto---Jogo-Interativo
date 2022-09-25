@@ -12,13 +12,11 @@ public class Choice {
         this.nextChapter = nextChapter;
     }
 
-    public String getT()
-    {
-    return this.text;
+    public String getT() {
+        return this.text;
     }
 
-    public Chapter getNext()
-    {
-    return this.nextChapter;
+    public Chapter getNext() {
+        return this.nextChapter;
     }
 }
