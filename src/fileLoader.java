@@ -40,8 +40,7 @@ public class fileLoader {
     }
 
     public HashMap<String, Chapter> loadChapters(String pathFileChapters,
-            HashMap<String, Character> characters,
-            Scanner scanConsole) {
+            HashMap<String, Character> characters) {
         HashMap<String, Chapter> chapters = new HashMap<String, Chapter>();
         File fileChapters = new File(pathFileChapters);
 
@@ -56,13 +55,13 @@ public class fileLoader {
                     lineChapter = scanFileChapters.nextLine();
                 }
                 if (lineChapter.equals("CHAPTER_IMAGE")) {
-                    ChapterImage chapter = new ChapterImage(characters, scanConsole, scanFileChapters);
+                    ChapterImage chapter = new ChapterImage(characters, scanFileChapters);
                     chapters.put(chapter.getName(), chapter);
 
                     lineChapter = "";
                 }
                 if (lineChapter.equals("CHAPTER")) {
-                    Chapter chapter = new Chapter(characters, scanConsole, scanFileChapters);
+                    Chapter chapter = new Chapter(characters, scanFileChapters);
                     chapters.put(chapter.getName(), chapter);
 
                     lineChapter = "";
@@ -87,12 +86,11 @@ public class fileLoader {
         String nameChapterOrigin;
         String textChoice;
         String nameChapterDestination;
-        String lineChapter;
-        lineChapter = scanFileChapters.nextLine(); // CHAPTER A:
+        scanFileChapters.nextLine(); // CHAPTER A:
         nameChapterOrigin = scanFileChapters.nextLine();
-        lineChapter = scanFileChapters.nextLine(); // CHOICE:
+        scanFileChapters.nextLine(); // CHOICE:
         textChoice = scanFileChapters.nextLine();
-        lineChapter = scanFileChapters.nextLine(); // CHAPTER B:
+        scanFileChapters.nextLine(); // CHAPTER B:
         nameChapterDestination = scanFileChapters.nextLine();
         Chapter chapterOrigin = chapters.get(nameChapterOrigin);
         Chapter chapterDestination = chapters.get(nameChapterDestination);

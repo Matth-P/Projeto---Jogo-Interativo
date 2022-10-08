@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -6,10 +9,9 @@ import java.util.Scanner;
 public class Chapter {
     private String name;
     private String text;
-    private Character[] characters;
+    protected Character[] characters;
     private int newFear;
     protected ArrayList<Choice> choices;
-    private Scanner scan;
 
     // Chapter building method
     public Chapter(String name,
@@ -22,88 +24,31 @@ public class Chapter {
         this.characters = characters;
         this.newFear = newFear;
         this.choices = new ArrayList<Choice>();
-        this.scan = scan;
     }
 
     protected Chapter() {
     }
 
     public Chapter(HashMap<String, Character> characters2,
-            Scanner scanConsole,
             Scanner scanFileChapters) {
-        this.load(characters2, scanConsole, scanFileChapters);
+        this.load(characters2, scanFileChapters);
         this.choices = new ArrayList<Choice>();
     }
 
-    // Chapter display method, it will show the name and the fear value of a giving
-    // character
-    public void display() {
-        System.out.println();
-        System.out.println(this.name);
-        System.out.println();
-        System.out.println(this.text);
-        System.out.println();
 
-        for (int F = 0; F < characters.length; F++) {
-            this.characters[F].Fear(this.newFear);
-        }
-        System.out.println();
-
-        for (int N = 0; N < characters.length; N++) {
-            int fearFactor = characters[N].getFF();
-            if (fearFactor != 100) {
-                System.out.println(characters[N].getName());
-                System.out.println(characters[N].getFF());
-                System.out.println();
-            }
-        }
-
-        if (this.choices.size() > 0) {
-            for (int C = 0; C < choices.size(); C++) {
-                System.out.println("" + choices.get(C).getT());
-            }
-            System.out.println();
-
-            int path = Choose();
-            this.choices.get(path).getNext().display();
-        }
-    }
-
-    // Chpater choice method, it will ask for a input, and if that input does not
-    // equals the actual choice, it will reapeat the question again
-    private int Choose() {
-        int path = -1;
-
-        if (choices != null) {
-            while (path == -1) {
-                System.out.print("Your choice: ");
-                String pathWrite = scan.nextLine();
-                for (int P = 0; P < choices.size(); P++) {
-                    if (pathWrite.equals(choices.get(P).getT())) {
-                        path = P;
-                    }
-                }
-            }
-            System.out.println();
-        }
-
-        return path;
-    }
 
     protected void load(HashMap<String, Character> characters,
-            Scanner scanConsole,
             Scanner scanFileChapters) {
         String nameCharacter1;
         String nameCharacter2;
         String nameCharacter3;
         String nameCharacter4;
-        String lineChapter;
-        this.scan = scanConsole;
-        lineChapter = scanFileChapters.nextLine(); // NAME
+        //this.scan = scanConsole;
+        scanFileChapters.nextLine(); // NAME
         this.name = scanFileChapters.nextLine();
-        lineChapter = scanFileChapters.nextLine(); // TEXT:
+        scanFileChapters.nextLine(); // TEXT:
         this.text = scanFileChapters.nextLine();
-        lineChapter = scanFileChapters.nextLine(); // CHARACTERS:
+        scanFileChapters.nextLine(); // CHARACTERS:
         nameCharacter1 = scanFileChapters.nextLine();
         nameCharacter2 = scanFileChapters.nextLine();
         nameCharacter3 = scanFileChapters.nextLine();
@@ -113,15 +58,57 @@ public class Chapter {
         Character character3 = characters.get(nameCharacter3);
         Character character4 = characters.get(nameCharacter4);
         this.characters = new Character[] { character1, character2, character3, character4 };
-        lineChapter = scanFileChapters.nextLine(); // FEAR CHANGE:
+        scanFileChapters.nextLine(); // FEAR CHANGE:
         this.newFear = Integer.parseInt(scanFileChapters.nextLine());
     }
-
+    
+    public void saveFile()
+    {
+        try (BufferedWriter savefile = new BufferedWriter(new FileWriter("rsc/SaveFile.txt"))) 
+            {
+                savefile.write("CHAPTER");
+                savefile.newLine();
+                savefile.write("NAME:");
+                savefile.newLine();
+                savefile.write(this.name);
+                savefile.newLine();
+                savefile.write("TEXT:");
+                savefile.newLine();
+                savefile.write(this.text);
+                savefile.newLine();
+                savefile.write("CHARACTERS:");
+                savefile.newLine();
+                savefile.write(this.characters[0].getName());
+                savefile.newLine();
+                savefile.write(this.characters[1].getName());
+                savefile.newLine();
+                savefile.write(this.characters[2].getName());
+                savefile.newLine();
+                savefile.write(this.characters[3].getName());
+                savefile.newLine();
+                savefile.write("FEAR CHANGE:");
+                savefile.newLine();
+                savefile.write(this.newFear);
+                savefile.close();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void addChoice(Choice choice) {
         this.choices.add(choice);
     }
 
     public String getName() {
         return this.name;
+    }
+    public String getText() {
+        return this.text;
+    }
+    public int getNF() {
+        return this.newFear;
+    }
+    public ArrayList<Choice> getChoices() {
+        return this.choices;
     }
 }

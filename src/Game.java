@@ -1,23 +1,22 @@
-import java.util.HashMap;
-import java.util.Scanner;
 
-public class Game {
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class Game extends Application{
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        launch(args);
 
-        fileLoader reader = new fileLoader();
-        HashMap<String, Character> characters = reader.loadCharacters("rsc/Characters.txt");
-        HashMap<String, Chapter> chapters = reader.loadChapters("rsc/Chapters.txt",
-                characters,
-                scan);
+    }
 
-        Chapter one = chapters.get("- Chapter 1 ------- The ghost at school! -");
-
-        // Game Execution
-        System.out.println();
-        System.out.println("-- Ghost Party --");
-        one.display();
-
-        scan.close();
+    public void start(Stage primareStage) throws Exception{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GUI.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        primareStage.setTitle("Ghost Party");
+        primareStage.setScene(scene);
+        primareStage.show();
     }
 }

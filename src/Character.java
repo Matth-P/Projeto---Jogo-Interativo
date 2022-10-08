@@ -12,10 +12,7 @@ public class Character {
         this.fearFactor = fearFactor;
     }
 
-    // Character fear change method, when the value is bellow 100, it will show the
-    // normal character energy, but if it reaches 100, it will show that a either a
-    // character "went
-    // home" or a game over in case the main character reaches that amount
+ 
     public void Fear(int newFear) {
         this.fearFactor = this.fearFactor + newFear;
 

@@ -1,7 +1,28 @@
 {
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar"
-    ]
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "c:\\Users\\Administrador\\Documents\\Java\\javafx-sdk-19\\lib\\javafx.base.jar",
+            "c:\\Users\\Administrador\\Documents\\Java\\javafx-sdk-19\\lib\\javafx.controls.jar",
+            "c:\\Users\\Administrador\\Documents\\Java\\javafx-sdk-19\\lib\\javafx.fxml.jar",
+            "c:\\Users\\Administrador\\Documents\\Java\\javafx-sdk-19\\lib\\javafx.graphics.jar",
+            "c:\\Users\\Administrador\\Documents\\Java\\javafx-sdk-19\\lib\\javafx-swt.jar",
+            "d:\\Java\\javafx\\lib\\javafx.base.jar",
+            "d:\\Java\\javafx\\lib\\javafx.controls.jar",
+            "d:\\Java\\javafx\\lib\\javafx.fxml.jar",
+            "d:\\Java\\javafx\\lib\\javafx.graphics.jar",
+            "d:\\Java\\javafx\\lib\\javafx.media.jar",
+            "d:\\Java\\javafx\\lib\\javafx.swing.jar",
+            "d:\\Java\\javafx\\lib\\javafx.web.jar",
+            "d:\\Java\\javafx\\lib\\javafx-swt.jar"
+        ],
+        "exclude": [
+            "c:\\Program Files\\Java\\javafx-sdk-19\\lib\\javafx.swing.jar",
+            "c:\\Program Files\\Java\\javafx-sdk-19\\lib\\javafx-swt.jar",
+            "c:\\Program Files\\Java\\javafx-sdk-19\\lib\\javafx.base.jar",
+            "c:\\Program Files\\Java\\javafx-sdk-19\\lib\\javafx.controls.jar"
+        ]
+    }
 }

@@ -9,7 +9,9 @@
             "name": "Launch Game",
             "request": "launch",
             "mainClass": "Game",
-            "projectName": "Projeto Java - Jogo interativo_bcc68e5a"
+            "projectName": "Projeto Java - Jogo interativo_bcc68e5a",
+            "vmArgs": "--module-path \"D:/Java/javafx/lib\" --add-modules javafx.controls,javafx.fxml"
+            
         },
         {
             "type": "java",
@@ -29,7 +31,8 @@
             "name": "Launch App",
             "request": "launch",
             "mainClass": "App",
-            "projectName": "Projeto Java - Jogo interativo_bcc68e5a"
+            "projectName": "Projeto Java - Jogo interativo_bcc68e5a",
+            "vmArgs": "--module-path \"D:/Java/javafx/lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
